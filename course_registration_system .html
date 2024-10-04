@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+    <script>
+        // Function to validate the registration form
+        function validateForm() {
+            // Get values from the form fields
+            var studentId = document.getElementById("studentId").value;
+            var courseCode = document.getElementById("courseCode").value;
+            var courseCredits = document.getElementById("courseCredits").value;
+            var courseCapacity = document.getElementById("courseCapacity").value;
+
+            // Validate Student ID (must be non-empty)
+            if (studentId === "") {
+                alert("Please enter your Student ID.");
+                return false; // Stop form submission
+            }
+
+            // Validate Course Code (must be non-empty)
+            if (courseCode === "") {
+                alert("Please enter the Course Code.");
+                return false; // Stop form submission
+            }
+
+            // Validate Course Credits (must be a number between 1 and 6)
+            if (isNaN(courseCredits) || courseCredits < 1 || courseCredits > 6) {
+                alert("Course credits should be between 1 and 6.");
+                return false; // Stop form submission
+            }
+
+            // Validate Course Capacity (must be a positive integer)
+            if (isNaN(courseCapacity) || courseCapacity <= 0) {
+                alert("Course capacity must be a positive number.");
+                return false; // Stop form submission
+            }
+
+            // If all validations pass
+            return true;
+        }
+
+        // Function to dynamically update course availability
+        function updateAvailability(availableSeats) {
+            var availabilityMessage = (availableSeats > 0) ? "Available Seats: " + availableSeats : "Course Fully Booked";
+            document.getElementById("availability").innerText = availabilityMessage;
+        }
+    </script>
+</head>
+<body>
+    <h1>Course Registration</h1>
+    
+    <!-- Registration form -->
+    <form name="registrationForm" onsubmit="return validateForm()">
+        <label for="studentId">Student ID:</label><br>
+        <input type="text" id="studentId" name="studentId"><br><br>
+        
+        <label for="courseCode">Course Code:</label><br>
+        <input type="text" id="courseCode" name="courseCode"><br><br>
+        
+        <label for="courseCredits">Course Credits (1-6):</label><br>
+        <input type="number" id="courseCredits" name="courseCredits"><br><br>
+        
+        <label for="courseCapacity">Course Capacity:</label><br>
+        <input type="number" id="courseCapacity" name="courseCapacity"><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <!-- Section to display course availability -->
+    <h3 id="availability"></h3>
+
+    <script>
+        // Set initial available seats (normally fetched from a server)
+        var availableSeats = 5; // Example value
+        updateAvailability(availableSeats);
+    </script>
+</body>
+</html>
