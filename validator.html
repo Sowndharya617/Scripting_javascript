@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Digit Number Validator</title>
+    <script>
+        // Function to validate the four-digit number
+        function validateNumber() {
+            var number = document.getElementById("fourDigitNumber").value; // Get the input value
+
+            // Check if the input is a four-digit number
+            if (number.length !== 4 || isNaN(number)) {
+                alert("Please enter a valid four-digit number.");
+                return;
+            }
+
+            // Check if the first digit is zero
+            if (number[0] === '0') {
+                alert("The first digit cannot be zero.");
+                return;
+            }
+
+            // Check if digits are in ascending order
+            for (let i = 0; i < number.length - 1; i++) {
+                if (number[i] >= number[i + 1]) {
+                    alert("Digits must be in ascending order.");
+                    return;
+                }
+            }
+
+            // If all checks pass
+            alert("The entered number is valid!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Validate a Four-Digit Number</h1>
+    <p>Enter a four-digit number below:</p>
+    <input type="text" id="fourDigitNumber" maxlength="4" placeholder="e.g., 1234">
+    <button onclick="validateNumber()">Validate</button>
+</body>
+</html>
