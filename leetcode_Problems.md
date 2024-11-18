@@ -4,7 +4,7 @@ This repository contains solutions to various LeetCode problems. Below are the l
 
 ## Problems
 
-1. **[Two Sum](https://leetcode.com/problems/two-sum/description/)**
+1. **[Two Sum]([https://leetcode.com/problems/two-sum/description/](https://leetcode.com/submissions/detail/1455134379/))**
    - Problem description: Given an array of integers, return the indices of the two numbers such that they add up to a specific target.
 
 2. **[Plus One](https://leetcode.com/problems/plus-one/submissions/1455151254/)**
