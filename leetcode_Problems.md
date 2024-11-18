@@ -16,7 +16,7 @@ This repository contains solutions to various LeetCode problems. Below are the l
 4. **[Filter Elements From Array](https://leetcode.com/submissions/detail/1455165079/)**
    - Problem description: Implement a custom filtering function for an array based on given criteria.
 
-5. **[Reverse Bits](https://leetcode.com/problems/reverse-bits/solutions/5770929/javascript-bitwise-solution-explained/)**
+5. **[Reverse Bits](https://leetcode.com/submissions/detail/1455880673/)**
    - Problem description: Reverse the bits of a given 32-bit unsigned integer and return the result.
 
 ## Usage
